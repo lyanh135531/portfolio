@@ -6,20 +6,16 @@ import { heroData } from '@/data/hero';
 const Hero = () => {
     return (
         <section className="grid grid-cols-2 gap-20 border-b pb-20">
-            <div>
+            <div className="group relative h-screen overflow-hidden rounded-lg">
                 <Image
                     src={heroData.image.src}
                     alt={heroData.image.alt}
-                    width={500}
-                    height={500}
-                    quality={100}
-                    className="object-cover w-full"
+                    fill
+                    className="object-cover w-full h-full max-w-none transition-transform duration-500 ease-in-out group-hover:scale-105"
                 />
             </div>
             <div className="flex flex-col justify-center gap-8">
-                <h1 className="font-sans text-6xl font-bold leading-snug">
-                    {heroData.title}
-                </h1>
+                <h1 className="text-5xl font-bold leading-snug">{heroData.title}</h1>
                 <p className="text-lg">{heroData.description}</p>
                 <div className="flex gap-4">
                     {heroData.socialLinks.map((link) => (
