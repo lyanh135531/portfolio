@@ -4,5 +4,4 @@ export type ProjectData = {
     image: ImageType;
     title: string;
     description: string;
-    link: string;
 };

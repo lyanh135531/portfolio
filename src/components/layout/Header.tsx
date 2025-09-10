@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Header = () => {
     return (
-        <header className="container sticky top-0 left-0 right-0 z-50 flex items-center justify-end py-12 bg-background">
+        <header className="container sticky top-0 left-0 right-0 z-50 flex items-center justify-end py-12 bg-background border-b border-gray-200">
             <nav>
                 <ul className="flex items-center gap-6">
                     {headerLinks.map((link) => (

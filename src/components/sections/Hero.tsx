@@ -5,7 +5,7 @@ import { heroData } from '@/data/hero';
 
 const Hero = () => {
     return (
-        <section className="grid grid-cols-2 gap-20 border-b pb-20">
+        <section className="grid grid-cols-2 gap-20 border-b pb-20 pt-12">
             <div className="group relative h-screen overflow-hidden rounded-lg">
                 <Image
                     src={heroData.image.src}

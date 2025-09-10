@@ -13,7 +13,7 @@ const ProjectItem = (project: ProjectData) => {
                 />
             </div>
             <h3 className="text-2xl font-bold">{project.title}</h3>
-            <p className="text-sm text-gray-500">{project.description}</p>
+            <p className="text-sm text-gray-500 line-clamp-3">{project.description}</p>
         </div>
     );
 };

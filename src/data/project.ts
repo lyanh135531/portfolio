@@ -9,6 +9,50 @@ export const projectData: ProjectData[] = [
             src: '/images/projects/sport-in-one/thumbnail.jpg',
             alt: 'Sport In One',
         },
-        link: 'https://sportinone.com',
+    },
+    {
+        title: 'Trainer',
+        description:
+            'A platform for jewellers to find and book jewellers for their events. I helped co-found this company and built the frontend and backend.',
+        image: {
+            src: '/images/projects/trainer/thumbnail.jpg',
+            alt: 'Fit Connect',
+        },
+    },
+    {
+        title: 'Friendly Jewellery',
+        description:
+            'A platform for jewellers to find and book jewellers for their events. I helped co-found this company and built the frontend and backend.',
+        image: {
+            src: '/images/projects/friendly-jewellery/thumbnail.jpg',
+            alt: 'Friendly Jewellery',
+        },
+    },
+    {
+        title: 'Chef',
+        description:
+            'A platform for chefs to find and book chefs for their events. I helped co-found this company and built the frontend and backend.',
+        image: {
+            src: '/images/projects/chef/thumbnail.jpg',
+            alt: 'Chef',
+        },
+    },
+    {
+        title: 'Doctor Booking System',
+        description:
+            'A platform for jewellers to find and book jewellers for their events. I helped co-found this company and built the frontend and backend.',
+        image: {
+            src: '/images/projects/doctor-booking-system/thumbnail.jpg',
+            alt: 'Doctor Booking System',
+        },
+    },
+    {
+        title: 'Solo Booking System',
+        description:
+            'A platform for jewellers to find and book jewellers for their events. I helped co-found this company and built the frontend and backend.',
+        image: {
+            src: '/images/projects/solo-booking-system/thumbnail.jpg',
+            alt: 'Solo Booking System',
+        },
     },
 ];
