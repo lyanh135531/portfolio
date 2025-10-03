@@ -4,31 +4,27 @@ import { Skill, SkillCategory, SkillLevel } from '@/types/skills';
 
 const getLevelTagColor = (level: SkillLevel) => {
     switch (level) {
-        case 'expert':
-            return 'bg-green-100 text-green-800 border-green-200';
         case 'advanced':
-            return 'bg-blue-100 text-blue-800 border-blue-200';
+            return 'bg-green-100 text-green-800 border-green-200';
         case 'intermediate':
             return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-        case 'beginner':
-            return 'bg-gray-100 text-gray-800 border-gray-200';
+        case 'basic':
+            return 'bg-gray-200 text-gray-800 border-gray-200';
         default:
-            return 'bg-gray-100 text-gray-800 border-gray-200';
+            return 'bg-gray-200 text-gray-800 border-gray-200';
     }
 };
 
 const getLevelText = (level: SkillLevel) => {
     switch (level) {
-        case 'expert':
-            return 'Expert';
         case 'advanced':
             return 'Advanced';
         case 'intermediate':
             return 'Intermediate';
-        case 'beginner':
-            return 'Beginner';
+        case 'basic':
+            return 'Basic';
         default:
-            return 'Beginner';
+            return 'Basic';
     }
 };
 
@@ -66,10 +62,9 @@ const Skills = () => {
                             {category.skills
                                 .sort((a, b) => {
                                     const levelOrder = {
-                                        expert: 4,
                                         advanced: 3,
                                         intermediate: 2,
-                                        beginner: 1,
+                                        basic: 1,
                                     };
                                     return levelOrder[b.level] - levelOrder[a.level];
                                 })

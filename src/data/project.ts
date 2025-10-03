@@ -13,7 +13,7 @@ export const projectData: ProjectData[] = [
     {
         title: 'Trainer',
         description:
-            'A platform for jewellers to find and book jewellers for their events. I helped co-found this company and built the frontend and backend.',
+            'A professional platform that connects clients with certified gym trainers for personalized training sessions. I contributed to both the frontend and backend development of this project.',
         image: {
             src: '/images/projects/trainer/thumbnail.jpg',
             alt: 'Fit Connect',
@@ -22,7 +22,7 @@ export const projectData: ProjectData[] = [
     {
         title: 'Friendly Jewellery',
         description:
-            'A platform for jewellers to find and book jewellers for their events. I helped co-found this company and built the frontend and backend.',
+            'This is a jewelry store management project that helps store owners manage products, orders, and customers. I co-founded this company and developed both the frontend and backend of the system.',
         image: {
             src: '/images/projects/friendly-jewellery/thumbnail.jpg',
             alt: 'Friendly Jewellery',
@@ -31,7 +31,7 @@ export const projectData: ProjectData[] = [
     {
         title: 'Chef',
         description:
-            'A platform for chefs to find and book chefs for their events. I helped co-found this company and built the frontend and backend.',
+            'This is a restaurant project that I co-founded and developed both the frontend and backend for.',
         image: {
             src: '/images/projects/chef/thumbnail.jpg',
             alt: 'Chef',

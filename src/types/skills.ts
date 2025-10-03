@@ -1,4 +1,4 @@
-export type SkillLevel = 'beginner' | 'intermediate' | 'advanced' | 'expert';
+export type SkillLevel = 'basic' | 'intermediate' | 'advanced';
 
 export type Skill = {
     name: string;
