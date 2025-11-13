@@ -1,6 +1,10 @@
-import React from 'react';
+'use client';
+
+import { cubicBezier, motion } from 'framer-motion';
 import { skillsData } from '@/data/skills';
 import { Skill, SkillCategory, SkillLevel } from '@/types/skills';
+
+const skillsEase = cubicBezier(0.16, 1, 0.3, 1);
 
 const getLevelTagColor = (level: SkillLevel) => {
     switch (level) {
@@ -22,15 +26,57 @@ const getLevelText = (level: SkillLevel) => {
         case 'intermediate':
             return 'Intermediate';
         case 'basic':
-            return 'Basic';
         default:
             return 'Basic';
     }
 };
 
+const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.2,
+            ease: skillsEase,
+            when: 'beforeChildren',
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 28 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 1.5,
+            ease: skillsEase,
+        },
+    },
+};
+
+const skillVariants = {
+    hidden: { opacity: 0, x: -16 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 1.5,
+            ease: skillsEase,
+        },
+    },
+};
+
 const SkillItem = ({ skill }: { skill: Skill }) => {
     return (
-        <div className="flex items-center justify-between py-2 border-b border-gray-200 last:border-b-0">
+        <motion.div
+            className="flex items-center justify-between py-2 border-b border-gray-200 last:border-b-0"
+            variants={skillVariants}
+            whileHover={{ x: 6 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+        >
             <div className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
                 <span className="font-medium text-gray-900">{skill.name}</span>
@@ -40,25 +86,36 @@ const SkillItem = ({ skill }: { skill: Skill }) => {
             >
                 {getLevelText(skill.level)}
             </span>
-        </div>
+        </motion.div>
     );
 };
 
 const Skills = () => {
     return (
-        <section className="flex flex-col gap-12 pt-20">
-            <div className="flex flex-col gap-4">
+        <motion.section
+            className="flex flex-col gap-12 pt-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={sectionVariants}
+        >
+            <motion.div className="flex flex-col gap-4" variants={cardVariants}>
                 <h2 className="text-4xl font-bold leading-none">{skillsData.title}</h2>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <motion.div
+                className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+                variants={sectionVariants}
+            >
                 {skillsData.categories.map((category: SkillCategory) => (
-                    <div key={category.title} className="flex flex-col gap-2">
+                    <motion.div key={category.title} className="flex flex-col gap-2" variants={cardVariants}>
                         <div>
-                            <h3 className="text-xl font-bold">{category.title}</h3>
+                            <motion.h3 className="text-xl font-bold" variants={cardVariants}>
+                                {category.title}
+                            </motion.h3>
                         </div>
 
-                        <div className="rounded-lg p-4">
+                        <motion.div className="rounded-lg p-4" variants={cardVariants}>
                             {category.skills
                                 .sort((a, b) => {
                                     const levelOrder = {
@@ -71,11 +128,11 @@ const Skills = () => {
                                 .map((skill: Skill) => (
                                     <SkillItem key={skill.name} skill={skill} />
                                 ))}
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 ))}
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     );
 };
 
