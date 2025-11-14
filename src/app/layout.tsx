@@ -1,8 +1,9 @@
+import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
+import PageContainer from '@/components/layout/PageContainer';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
 import './globals.css';
 
 const geistSans = Geist({
@@ -26,17 +27,17 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" className="h-full">
             <body
                 className={cn(
                     geistSans.variable,
                     geistMono.variable,
-                    'antialiased',
+                    'antialiased h-full',
                 )}
             >
-                <div className="container font-mono">
+                <div className="container font-mono min-h-full flex flex-col w-full">
                     <Header />
-                    {children}
+                    <PageContainer>{children}</PageContainer>
                     <Footer />
                 </div>
             </body>

@@ -14,15 +14,14 @@ interface PageContainerProps {
 const PageContainer = ({ children, className }: PageContainerProps) => {
     return (
         <motion.div
-            className={clsx(
-                'relative isolate min-h-screen overflow-hidden bg-background',
-                className,
-            )}
+            className={clsx('flex flex-col flex-1 overflow-hidden bg-background', className)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease }}
         >
-            <main className="flex flex-col gap-16 py-10">{children}</main>
+            <div className="flex flex-col gap-16 py-10 w-full flex-1">
+                {children}
+            </div>
         </motion.div>
     );
 };

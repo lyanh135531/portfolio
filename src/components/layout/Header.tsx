@@ -1,73 +1,45 @@
 'use client';
 
-import { cubicBezier, motion } from 'framer-motion';
 import { headerLinks } from '@/data/header';
+import clsx from 'clsx';
 import Link from 'next/link';
-
-const ease = cubicBezier(0.16, 1, 0.3, 1);
-
-const headerVariants = {
-    hidden: { opacity: 0, y: -24 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.2,
-            ease,
-            when: 'beforeChildren',
-            staggerChildren: 0.5,
-        },
-    },
-};
-
-const listVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.2,
-        },
-    },
-};
-
-const linkVariants = {
-    hidden: { opacity: 0, y: -12 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.6,
-            ease,
-        },
-    },
-};
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
+    const pathname = usePathname();
+
+    const isActive = (href: string) => {
+        if (href === '/') {
+            return pathname === '/';
+        }
+        return pathname.startsWith(href);
+    };
     return (
-        <motion.header
-            className="sticky top-0 left-0 right-0 z-50 flex items-center justify-end py-12 pr-40 bg-background border-b border-gray-200"
-            initial="hidden"
-            animate="visible"
-            variants={headerVariants}
-        >
+        <header className="container sticky top-0 left-0 right-0 z-50 flex items-center justify-end py-12 bg-background border-b border-gray-200">
             <nav>
-                <motion.ul className="flex items-center gap-6" variants={listVariants}>
-                    {headerLinks.map((link) => (
-                        <motion.li
-                            key={link.href}
-                            variants={linkVariants}
-                            whileHover={{ y: -2 }}
-                        >
-                            <Link
-                                href={link.href}
-                                className="text-2xl font-medium hover:text-primary hover:underline"
-                            >
-                                {link.label}
-                            </Link>
-                        </motion.li>
-                    ))}
-                </motion.ul>
+                <ul className="flex items-center gap-6">
+                    {headerLinks.map((link) => {
+                        const active = isActive(link.href);
+                        return (
+                            <li key={link.href}>
+                                <Link
+                                    href={link.href}
+                                    className={clsx(
+                                        'text-2xl font-medium hover:text-primary hover:underline transition-colors',
+                                        {
+                                            'text-primary underline': active,
+                                            'hover:text-primary hover:underline': !active,
+                                        },
+                                    )}
+                                >
+                                    {link.label}
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
             </nav>
-        </motion.header>
+        </header>
     );
 };
 

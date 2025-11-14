@@ -24,7 +24,7 @@ const itemVariants = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 4,
+            duration: 2,
             ease: footerEase,
         },
     },
