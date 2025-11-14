@@ -2,6 +2,15 @@ import { ProjectData } from '@/types/project';
 
 export const projectData: ProjectData[] = [
     {
+        title: 'Friendly Jewellery',
+        description:
+            'This is a jewelry store management project that helps store owners manage products, orders, and customers. I co-founded this company and developed both the frontend and backend of the system.',
+        image: {
+            src: '/images/projects/friendly-jewellery/thumbnail.jpg',
+            alt: 'Friendly Jewellery',
+        },
+    },
+    {
         title: 'Sport In One',
         description:
             'A compliance and buying SAAS for veterinary groups and their practices that Ive helped co-found',
@@ -17,15 +26,6 @@ export const projectData: ProjectData[] = [
         image: {
             src: '/images/projects/trainer/thumbnail.jpg',
             alt: 'Fit Connect',
-        },
-    },
-    {
-        title: 'Friendly Jewellery',
-        description:
-            'This is a jewelry store management project that helps store owners manage products, orders, and customers. I co-founded this company and developed both the frontend and backend of the system.',
-        image: {
-            src: '/images/projects/friendly-jewellery/thumbnail.jpg',
-            alt: 'Friendly Jewellery',
         },
     },
     {

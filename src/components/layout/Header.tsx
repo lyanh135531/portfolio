@@ -44,7 +44,7 @@ const linkVariants = {
 const Header = () => {
     return (
         <motion.header
-            className="container sticky top-0 left-0 right-0 z-50 flex items-center justify-end py-12 bg-background border-b border-gray-200"
+            className="sticky top-0 left-0 right-0 z-50 flex items-center justify-end py-12 pr-40 bg-background border-b border-gray-200"
             initial="hidden"
             animate="visible"
             variants={headerVariants}
