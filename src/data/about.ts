@@ -4,7 +4,7 @@ export const aboutData: AboutData = {
     introduction: {
         title: 'About Me',
         description:
-            "Hi there! I'm a developer who loves building things and solving real problems with technology. I can work on the frontend to create clean, easy-to-use websites, build the backend so everything runs smoothly, explore AI to add smart features, and handle DevOps to keep everything online and updated. I enjoy learning new things and taking on any challenge, no matter how big or small. If you want someone who is reliable, quick to learn, and comfortable working across the whole stack, I’m excited to show you what I can do.",
+            "I'm Ly Anh—a one-person product team who loves turning ambitious ideas into shippable software. Over the past few years I've teamed up with founders, agencies, and enterprise squads to build everything from fast marketing sites and operational tooling to AI-enabled platforms that live in production.\n\nMy background spans React, Next.js, .NET Core, and Python, so I can handle the frontend polish, backend rigor, data modeling, and DevOps glue without breaking stride. I thrive on tough briefs, move quickly from discovery to delivery, and stay hands-on through monitoring and iteration.\n\nWhether you're validating a v1, scaling an internal system, or layering AI into an existing product, I'm ready to plug in, own the work, and keep the momentum going.",
     },
     experience: {
         title: 'Experience',

@@ -19,7 +19,7 @@ const PageContainer = ({ children, className }: PageContainerProps) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease }}
         >
-            <div className="flex flex-col gap-16 py-10 w-full flex-1">
+            <div className="flex flex-col gap-16 py-20 w-full flex-1">
                 {children}
             </div>
         </motion.div>

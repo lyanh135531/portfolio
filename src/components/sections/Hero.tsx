@@ -61,7 +61,7 @@ const iconVariants = {
 const Hero = () => {
     return (
         <motion.section
-            className="grid grid-cols-2 gap-20 border-b pb-20 pt-12"
+            className="grid grid-cols-2 gap-20 border-b pb-20"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}

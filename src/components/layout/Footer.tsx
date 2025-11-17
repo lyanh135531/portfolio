@@ -33,7 +33,7 @@ const itemVariants = {
 const Footer = () => {
     return (
         <motion.footer
-            className="py-10"
+            className="pb-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
