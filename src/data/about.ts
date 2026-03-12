@@ -4,31 +4,24 @@ export const aboutData: AboutData = {
     introduction: {
         title: 'About Me',
         description:
-            "I'm Ly Anh—a one-person product team who loves turning ambitious ideas into shippable software. Over the past few years I've teamed up with founders, agencies, and enterprise squads to build everything from fast marketing sites and operational tooling to AI-enabled platforms that live in production.\n\nMy background spans React, Next.js, .NET Core, and Python, so I can handle the frontend polish, backend rigor, data modeling, and DevOps glue without breaking stride. I thrive on tough briefs, move quickly from discovery to delivery, and stay hands-on through monitoring and iteration.\n\nWhether you're validating a v1, scaling an internal system, or layering AI into an existing product, I'm ready to plug in, own the work, and keep the momentum going.",
+            "I'm Ly Ly Anh—a Full Stack Software Engineer with over 5 years of experience building scalable web applications, enterprise platforms, and AI-powered systems. I thrive at the intersection of solid engineering and real-world impact: from architecting microservices and clean code foundations to integrating LLMs, Computer Vision, and RAG pipelines into production.\n\nMy background spans React, Next.js, .NET Core, and Python FastAPI—giving me the range to own the full delivery loop: requirements, data modeling, frontend polish, backend rigor, and DevOps. I've led greenfield projects from a blank canvas to production, mentored engineering teams, and consistently delivered ahead of schedule.\n\nWhether you're building a new product from scratch, integrating AI into an existing system, or scaling a growing platform—I'm ready to jump in, take ownership, and keep the momentum going.",
     },
     experience: {
         title: 'Experience',
         items: [
             {
-                role: '.NET Developer',
+                role: 'Middle Software Engineer / Full Stack Developer',
                 company: 'AutoServer Vietnam',
-                period: '2024 - Present',
+                period: 'Jul 2024 – Present',
                 description:
-                    'Joined AutoServer to build a greenfield .NET MVC platform, then moved into the internal AI team to leverage my Python experience. I now architect and deploy LLM-powered features for the product suite, containerize services with Docker on Linux servers, and operate them with monitoring stacks to keep everything observable and reliable. In parallel, I single-handedly designed, built, and shipped an internal AI proving ground—a full-stack web app (frontend, backend, data model, deployment) where the team can demo, tune, and validate every new capability before it reaches production.',
+                    'Leading and mentoring developers to build core products from scratch using .NET Core, SQL Server, and TypeScript. Established coding standards, created architectural boilerplates, and spearheaded AI integration—including LLMs, YOLO/ResNet Computer Vision, and RAG/MCP pipelines. Achieved a 93% reduction in AI API latency (from 14s to <1s for 50 images). Built a microservices-based AI testing platform end-to-end. Optimized Docker images, reducing virtual memory footprint by 4GB. Managed GPU/VRAM allocation for AI inference and automated data workflows with Python.',
             },
             {
-                role: 'Frontend Developer',
-                company: 'Freelance',
-                period: '2024 - Present',
-                description:
-                    'Deliver high-end marketing sites and lightweight admin tools using Next.js, translating Figma concepts into production-ready UI with responsive layouts, animation polish, and CMS-friendly components.',
-            },
-            {
-                role: 'Full-Stack Developer',
+                role: 'Software Engineer (Promoted from Intern)',
                 company: 'IDTEK JSC',
-                period: '2021 - 2024',
+                period: 'Jun 2021 – Jun 2024',
                 description:
-                    'Led outsourced builds for HR management and meeting-room booking platforms, pairing React frontends with .NET Core APIs. Owned the full delivery loop from requirements and data modeling to deployments and ongoing enhancements.',
+                    'Delivered outsourcing projects ahead of schedule as a Key Developer on HR management and meeting-room booking platforms, pairing React frontends with .NET Core APIs. Developed Core Base Code reused company-wide. Promoted to Junior Software Engineer within just 2 months due to exceptional performance. Managed IIS deployments, engineered automated SQL backup scripts via PowerShell, and optimized SQL queries and stored procedures for large-scale applications.',
             },
         ],
     },
@@ -36,9 +29,9 @@ export const aboutData: AboutData = {
         title: 'Education',
         items: [
             {
-                degree: 'Bachelor of Information Technology',
+                degree: 'Bachelor of Computer Science',
                 institution: 'Ton Duc Thang University',
-                period: '2018 - 2022',
+                period: '2018 – 2022',
             },
         ],
     },
@@ -46,27 +39,27 @@ export const aboutData: AboutData = {
         title: 'Currently Learning',
         items: [
             {
-                technology: '.NET Core 10',
+                technology: 'Computer Vision & AI Models',
                 description:
-                    'Leveling up on the newest .NET Core releases to take advantage of performance boosts, native AOT, and modern API patterns.',
+                    'Deepening expertise in YOLO, ResNet, and OCR pipelines for production-grade Computer Vision systems integrated into enterprise applications.',
                 status: 'deepening',
             },
             {
-                technology: 'React 19',
+                technology: 'LLM & RAG Engineering',
                 description:
-                    'Digging into the latest React features—new compiler work, Actions, and ergonomics—to keep frontends fast and maintainable.',
+                    'Expanding knowledge of Retrieval-Augmented Generation, Model Context Protocol (MCP), and agentic AI workflows using OpenAI, Gemini, and open-source LLMs.',
                 status: 'deepening',
             },
             {
-                technology: 'Next.js 15',
+                technology: '.NET Core & Modern Architecture',
                 description:
-                    'Staying current with the App Router, Server Components, and emerging patterns for streaming UI and hybrid rendering.',
+                    'Leveling up on the latest .NET releases, native AOT, performance tuning, and Clean Architecture patterns for scalable enterprise systems.',
                 status: 'deepening',
             },
             {
-                technology: 'DevOps & Platform Skills',
+                technology: 'DevOps & Platform Engineering',
                 description:
-                    'Sharpening hands-on experience with Docker, Kubernetes, RabbitMQ, Kafka, and observability stacks to ship and operate resilient systems.',
+                    'Sharpening hands-on experience with Docker, Kubernetes, GitLab CI/CD, and observability stacks to ship and operate resilient, production-ready systems.',
                 status: 'in-progress',
             },
         ],

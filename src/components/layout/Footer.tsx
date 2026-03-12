@@ -44,7 +44,7 @@ const Footer = () => {
                 variants={itemVariants}
             >
                 <motion.span className="text-xs gap-1" variants={itemVariants}>
-                    <span>© 2025 All rights reserved</span>
+                    <span>© 2026 All rights reserved</span>
                 </motion.span>
                 <motion.div className="flex gap-2 text-xs" variants={itemVariants}>
                     <span>Privacy</span>

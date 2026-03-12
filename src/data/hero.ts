@@ -1,9 +1,9 @@
 import { HeroData } from '@/types/hero';
 
 export const heroData: HeroData = {
-    title: "I'm Ly Anh, a passionate software developer.",
+    title: "I'm Ly Anh, a Full Stack Software Engineer.",
     description:
-        'I specialize in crafting scalable and efficient web applications using modern technologies. With a strong focus on clean code and user-centered design, I transform innovative ideas into high-quality digital products that drive business success.',
+        'Full Stack Software Engineer with 5+ years of experience designing, building, and shipping scalable web applications and enterprise products. I specialize in React, Next.js, .NET Core, and Python—with a growing focus on AI integration including LLMs, RAG pipelines, Computer Vision (YOLO, ResNet), and OCR. I bring both engineering depth and product thinking to every build.',
     image: {
         src: '/images/hero.jpg',
         alt: 'Ly Anh',
