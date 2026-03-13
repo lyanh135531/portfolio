@@ -1,12 +1,9 @@
 'use client';
 
-import ProjectItem from '@/components/shared/ProjectItem';
 import { projectData } from '@/data/project';
 import { cubicBezier, motion } from 'framer-motion';
-import { useEffect, useMemo, useRef, useState } from 'react';
 
 const ease = cubicBezier(0.16, 1, 0.3, 1);
-const PAGE_SIZE = 6;
 
 const introSection = {
     hidden: { opacity: 0 },
@@ -16,149 +13,130 @@ const introSection = {
             duration: 0.2,
             ease,
             when: 'beforeChildren',
-            staggerChildren: 0.3,
+            staggerChildren: 0.15,
         },
     },
 };
 
 const introItem = {
-    hidden: { opacity: 0, y: 18 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.2,
+            duration: 0.4,
             ease,
         },
     },
 };
 
 const ProjectsPage = () => {
-    const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-    const observerRef = useRef<HTMLDivElement | null>(null);
-
-    const projectsToRender = useMemo(() => {
-        return projectData.slice(0, visibleCount);
-    }, [visibleCount]);
-
-    const hasMore = visibleCount < projectData.length;
-
-    useEffect(() => {
-        if (!hasMore) {
-            return;
-        }
-
-        const sentinel = observerRef.current;
-        if (!sentinel) {
-            return;
-        }
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const entry = entries[0];
-                if (entry?.isIntersecting) {
-                    setVisibleCount((prev) =>
-                        Math.min(prev + PAGE_SIZE, projectData.length),
-                    );
-                }
-            },
-            {
-                rootMargin: '240px 0px',
-                threshold: 0.1,
-            },
-        );
-
-        observer.observe(sentinel);
-
-        return () => observer.disconnect();
-    }, [hasMore]);
-
     return (
         <motion.section
-            className="space-y-10"
+            className="space-y-16"
             initial="hidden"
             animate="visible"
             variants={introSection}
         >
             <motion.section className="space-y-6" variants={introItem}>
                 <span className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-                    Project archive
+                    Experience & Projects
                 </span>
                 <h1 className="text-4xl font-bold leading-[1.05] text-neutral-900 sm:text-5xl max-w-2xl">
-                    Here are some of the things I&apos;ve been working on
+                    Professional Background
                 </h1>
                 <p className="max-w-2xl text-lg leading-relaxed text-neutral-700">
-                    A running log of client launches, internal experiments, and
-                    collaborative builds. Scroll to see everything I&apos;ve been shipping
-                    recently.
+                    A detailed timeline of my professional experience, key projects, and the technical impact I&apos;ve delivered.
                 </p>
             </motion.section>
-            <motion.div
-                className="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3"
-                initial="hidden"
-                animate="visible"
-                variants={{
-                    hidden: { opacity: 0 },
-                    visible: {
-                        opacity: 1,
-                        transition: {
-                            staggerChildren: 0.12,
-                            ease,
-                            duration: 0.3,
-                        },
-                    },
-                }}
-            >
-                {projectsToRender.map((project) => (
-                    <motion.article
-                        key={project.title}
-                        variants={{
-                            hidden: { opacity: 0, y: 28 },
-                            visible: {
-                                opacity: 1,
-                                y: 0,
-                                transition: { duration: 0.3, ease },
-                            },
-                        }}
-                        className="group"
-                    >
-                        <ProjectItem {...project} />
-                    </motion.article>
-                ))}
-            </motion.div>
 
-            {hasMore ? (
-                <div className="flex flex-col items-center gap-6">
-                    <motion.div
-                        className="flex items-center gap-3 rounded-full border border-neutral-200 bg-white px-5 py-2 text-sm font-medium text-neutral-500 shadow-sm"
-                        animate={{ opacity: [0.4, 1, 0.4] }}
-                        transition={{
-                            duration: 2.4,
-                            repeat: Infinity,
-                            ease: 'easeInOut',
-                        }}
-                    >
-                        Scrolling in new work
-                        <motion.span
-                            animate={{ x: [0, 8, 0] }}
-                            transition={{
-                                repeat: Infinity,
-                                duration: 1.8,
-                                ease: 'easeInOut',
-                            }}
+            <motion.div className="flex flex-col relative" variants={introSection}>
+                {/* Vertical Timeline Line */}
+                <div className="absolute left-0 sm:left-6 top-8 bottom-0 w-px bg-neutral-200 hidden sm:block" />
+
+                {projectData.map((project) => {
+                    const role = project.details.stats.find(s => s.label === 'Role')?.value;
+                    const timeline = project.details.stats.find(s => s.label === 'Timeline')?.value;
+                    const company = project.details.stats.find(s => s.label === 'Company')?.value;
+
+                    return (
+                        <motion.article
+                            key={project.slug}
+                            variants={introItem}
+                            className="relative flex flex-col sm:flex-row gap-6 sm:gap-12 py-10 sm:py-16 border-t border-neutral-100 first:border-t-0"
                         >
-                            →
-                        </motion.span>
-                    </motion.div>
-                    <div ref={observerRef} className="h-10 w-px bg-neutral-200" />
-                </div>
-            ) : (
-                <div className="flex flex-col items-center gap-3 text-sm text-neutral-500">
-                    <span>
-                        That&apos;s the full archive — check back soon for fresh builds.
-                    </span>
-                </div>
-            )}
+                            {/* Timeline Node */}
+                            <div className="hidden sm:flex absolute left-6 top-16 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-white bg-neutral-300 ring-4 ring-background" />
+
+                            {/* Left Column: Timeline & Meta */}
+                            <div className="sm:w-1/4 sm:pl-16 sm:pt-1 shrink-0 space-y-2">
+                                {timeline && (
+                                    <p className="text-sm font-semibold text-neutral-900">
+                                        {timeline}
+                                    </p>
+                                )}
+                                {company && (
+                                    <p className="text-sm text-neutral-500 font-medium">
+                                        @ {company}
+                                    </p>
+                                )}
+                            </div>
+
+                            {/* Right Column: Content */}
+                            <div className="flex-1 space-y-5">
+                                <div className="space-y-1">
+                                    <h2 className="text-2xl font-bold text-neutral-900">
+                                        {project.title}
+                                    </h2>
+                                    {role && (
+                                        <h3 className="text-base font-semibold text-primary">
+                                            {role}
+                                        </h3>
+                                    )}
+                                </div>
+
+                                <p className="text-base leading-relaxed text-neutral-700">
+                                    {project.details.hero.summary || project.description}
+                                </p>
+
+                                {project.details.features && project.details.features.length > 0 && (
+                                    <ul className="space-y-3 mt-4 text-neutral-700">
+                                        {project.details.features.map((feature, i) => (
+                                            <li key={i} className="flex gap-3 text-sm leading-relaxed">
+                                                <span className="text-neutral-300 mt-1.5 shrink-0">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                                                </span>
+                                                <div>
+                                                    <span className="font-semibold text-neutral-900">{feature.title}: </span>
+                                                    {feature.description}
+                                                    {feature.result && (
+                                                        <span className="font-medium text-primary ml-1">
+                                                            ({feature.result})
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+
+                                {project.details.stack && project.details.stack.length > 0 && (
+                                    <div className="flex flex-wrap gap-2 pt-6">
+                                        {project.details.stack.map(tech => (
+                                            <span 
+                                                key={tech}
+                                                className="px-3 py-1.5 rounded-full bg-neutral-900 text-neutral-50 text-[10px] font-bold uppercase tracking-[0.1em] transition-transform hover:scale-105"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </motion.article>
+                    );
+                })}
+            </motion.div>
         </motion.section>
     );
 };

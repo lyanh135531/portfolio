@@ -29,7 +29,7 @@ export type ProjectDetails = {
         summary: string;
         tags: string[];
     };
-    cover: {
+    cover?: {
         admin: ImageType;
         user: ImageType;
     };
@@ -38,7 +38,7 @@ export type ProjectDetails = {
     features: ProjectFeature[];
     stack: string[];
     links: ProjectLink[];
-    gallery: ImageType[];
+    gallery?: ImageType[];
 };
 
 export type ProjectData = {

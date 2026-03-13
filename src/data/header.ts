@@ -9,10 +9,10 @@ export const headerLinks: HeaderLink[] = [
         label: 'About',
         href: '/about',
     },
-    // {
-    //     label: 'Projects',
-    //     href: '/projects',
-    // },
+    {
+        label: 'Projects',
+        href: '/projects',
+    },
     {
         label: 'Contact',
         href: '/contact',

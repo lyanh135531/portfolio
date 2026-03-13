@@ -14,7 +14,7 @@ interface PageContainerProps {
 const PageContainer = ({ children, className }: PageContainerProps) => {
     return (
         <motion.div
-            className={clsx('flex flex-col flex-1 overflow-hidden bg-background', className)}
+            className={clsx('flex flex-col flex-1 bg-background', className)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease }}
