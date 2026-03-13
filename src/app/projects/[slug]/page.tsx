@@ -1,6 +1,5 @@
 import { projectData } from '@/data/project';
 import { Metadata } from 'next';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 type ProjectDetailPageProps = {
@@ -34,8 +33,8 @@ export const generateMetadata = async ({
             description: project.description,
             images: [
                 {
-                    url: project.details.cover.src,
-                    alt: project.details.cover.alt,
+                    url: project.image.src,
+                    alt: project.image.alt,
                 },
             ],
         },
@@ -73,25 +72,6 @@ const ProjectDetailPage = async ({ params }: ProjectDetailPageProps) => {
                 </div>
             </section>
 
-            <div className="relative h-[420px] w-full overflow-hidden rounded-lg flex flex-col gap-4">
-                <Image
-                    src={details.cover.admin.src}
-                    alt={details.cover.admin.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 75vw"
-                    priority
-                />
-                <Image
-                    src={details.cover.user.src}
-                    alt={details.cover.user.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 75vw"
-                    priority
-                />
-            </div>
-
             <section className="grid gap-6 sm:grid-cols-3">
                 {details.stats.map((stat) => (
                     <div key={stat.label} className="space-y-2">
@@ -128,33 +108,6 @@ const ProjectDetailPage = async ({ params }: ProjectDetailPageProps) => {
                         )}
                     </article>
                 ))}
-            </section>
-
-            <section className="space-y-6">
-                <div className="space-y-2">
-                    <span className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
-                        Gallery
-                    </span>
-                    <h2 className="text-3xl font-semibold text-neutral-900">
-                        Featured Screens
-                    </h2>
-                </div>
-                <div className="grid gap-6 md:grid-cols-2">
-                    {details.gallery.map((image) => (
-                        <div
-                            key={image.src}
-                            className="relative h-80 overflow-hidden rounded-lg"
-                        >
-                            <Image
-                                src={image.src}
-                                alt={image.alt}
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                            />
-                        </div>
-                    ))}
-                </div>
             </section>
         </div>
     );

@@ -7,7 +7,7 @@ export const projectData: ProjectData[] = [
         description:
             'An internal AI testing and integration platform built end-to-end at AutoServer Vietnam, enabling the team to demo, validate, and deploy AI capabilities into production.',
         image: {
-            src: '/images/projects/autoserver-ai-platform/thumbnail.jpg',
+            src: '/images/projects/autoserver-ai-platform/thumbnail.png',
             alt: 'AutoServer AI Platform UI',
         },
         details: {
@@ -107,7 +107,7 @@ export const projectData: ProjectData[] = [
         description:
             'A full-featured human resources management platform built at IDTEK JSC, covering employee lifecycle, payroll, attendance, leave management, and reporting.',
         image: {
-            src: '/images/projects/hr-management-platform/thumbnail.jpg',
+            src: '/images/projects/hr-management-platform/thumbnail.png',
             alt: 'HR Management Platform',
         },
         details: {
@@ -184,7 +184,7 @@ export const projectData: ProjectData[] = [
         description:
             'An enterprise meeting room reservation platform built at IDTEK JSC, with real-time availability, resource management, and automated notifications.',
         image: {
-            src: '/images/projects/meeting-room-booking/thumbnail.jpg',
+            src: '/images/projects/meeting-room-booking/thumbnail.png',
             alt: 'Meeting Room Booking System',
         },
         details: {
@@ -261,7 +261,7 @@ export const projectData: ProjectData[] = [
         description:
             'A multi-store management platform for a premium jewelry brand, synchronizing inventory, sales, and loyalty programs across all locations.',
         image: {
-            src: '/images/projects/friendly-jewellery/thumbnail.jpg',
+            src: '/images/projects/friendly-jewellery/thumbnail.png',
             alt: 'Friendly Jewellery storefront UI',
         },
         details: {
@@ -359,7 +359,7 @@ export const projectData: ProjectData[] = [
         description:
             'A booking platform for patients and a capacity optimization tool for specialty clinics.',
         image: {
-            src: '/images/projects/doctor-booking-system/thumbnail.jpg',
+            src: '/images/projects/doctor-booking-system/thumbnail.png',
             alt: 'Doctor booking hero section',
         },
         details: {
@@ -434,7 +434,7 @@ export const projectData: ProjectData[] = [
         description:
             'A modern, performance-focused personal portfolio built with Next.js 15 and Tailwind CSS, showcasing projects, skills, and professional experience.',
         image: {
-            src: '/images/projects/portfolio-website/thumbnail.jpg',
+            src: '/images/projects/portfolio-website/thumbnail.png',
             alt: 'Portfolio website screenshot',
         },
         details: {
